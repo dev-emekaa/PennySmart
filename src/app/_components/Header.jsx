@@ -4,8 +4,9 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useUser, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-function Header() {
+const Header= () =>{
   const { user, isSignedIn } = useUser();
+  
   return (
     <div className="p-5 flex justify-between items-center border shadow-sm">
       <div className="flex flex-row items-center">
