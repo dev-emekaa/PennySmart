@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useUser, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
+
 const Header= () =>{
   const { user, isSignedIn } = useUser();
   
@@ -17,12 +18,12 @@ const Header= () =>{
         <UserButton />
       ) : (
         <div className="flex gap-3  items-center">
-          <Link href={"/dashboard"}>
+          <Link href={"/sign-in"}>
             <Button variant="outline" className="rounded-full">
               Dashboard
             </Button>
           </Link>
-          <Link href={"/sign-in"}>
+          <Link href={"/sign-up"}>
             <Button className="rounded-full">Get Started</Button>
           </Link>
         </div>

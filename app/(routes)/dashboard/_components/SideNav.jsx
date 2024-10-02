@@ -1,3 +1,5 @@
+
+
 import React, { useEffect } from "react";
 import Image from "next/image";
 import {
@@ -38,18 +40,7 @@ function SideNav() {
       icon: ReceiptText,
       path: "/dashboard/expenses",
     },
-    // {
-    //   id: 2,
-    //   name: "Investments",
-    //   icon: TrendingUp,
-    //   path: "/dashboard/investments",
-    // },
-    // {
-    //   id: 2,
-    //   name: "Debts",
-    //   icon: TrendingDownIcon,
-    //   path: "/dashboard/debts",
-    // },
+
     {
       id: 4,
       name: "Upgrade",
@@ -64,14 +55,9 @@ function SideNav() {
   }, [path]);
   return (
     <div className="h-screen p-5 border shadow-sm">
-      {/* <Image src={'/logo.svg'}
-        alt='logo'
-        width={160}
-        height={100}
-        /> */}
       <div className="flex flex-row items-center">
-        <Image src={"./chart-donut.svg"} alt="logo" width={40} height={25} />
-        <span className="text-blue-800 font-bold text-xl">FinanSmart</span>
+        <Image src={"./piggybank.svg"} alt="logo" width={40} height={25} />
+        <span className="text-green-2 font-bold text-xl">PennySmart</span>
       </div>
       <div className="mt-5">
         {menuList.map((menu, index) => (
