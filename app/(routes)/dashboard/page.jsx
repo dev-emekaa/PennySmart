@@ -1,19 +1,22 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UserButton, useUser } from "@clerk/nextjs";
 import CardInfo from "./_components/CardInfo";
-import { getTableColumns } from "drizzle-orm";
-import { Expenses } from "@/utils/schema";
+import { db } from "@/utils/dbConfig";
+import { desc, eq, getTableColumns, sql } from "drizzle-orm";
+import { Budgets, Expenses, Incomes } from "@/utils/schema";
 import BarChartDashboard from "./_components/BarChartDashboard";
+import BudgetItem from "./budgets/_components/BudgetItem";
 import ExpenseListTable from "./expenses/_components/ExpenseListTable";
-
-const Dashboard = () => {
+function Dashboard() {
   const { user } = useUser();
+
   const [budgetList, setBudgetList] = useState([]);
   const [incomeList, setIncomeList] = useState([]);
   const [expensesList, setExpensesList] = useState([]);
-
+  useEffect(() => {
+    user && getBudgetList();
+  }, [user]);
   /**
    * used to get budget List
    */
@@ -21,6 +24,7 @@ const Dashboard = () => {
     const result = await db
       .select({
         ...getTableColumns(Budgets),
+
         totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
         totalItem: sql`count(${Expenses.id})`.mapWith(Number),
       })
@@ -75,7 +79,7 @@ const Dashboard = () => {
 
   return (
     <div className="p-8 bg-">
-      <h2 className="font-bold text-4xl">Hi, {user?.firstName} 👋</h2>
+      <h2 className="font-bold text-4xl">Hi, {user?.fullName} 👋</h2>
       <p className="text-gray-500">
         Here's what happening with your money, Lets Manage your expense
       </p>
@@ -105,8 +109,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
-
   );
-};
+}
 
 export default Dashboard;
