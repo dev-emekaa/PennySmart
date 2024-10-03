@@ -22,17 +22,18 @@ function CardInfo({ budgetList, incomeList }) {
   }, [budgetList, incomeList]);
 
   useEffect(() => {
-    // if (totalBudget > 0 || totalIncome > 0 || totalSpend > 0) {
-    //   const fetchFinancialAdvice = async () => {
-    //     const advice = await getFinancialAdvice(
-    //       totalBudget,
-    //       totalIncome,
-    //       totalSpend
-    //     );
-    //     setFinancialAdvice(advice);
-    //   };
+    if (totalBudget > 0 || totalIncome > 0 || totalSpend > 0) {
+      const fetchFinancialAdvice = async () => {
+        const advice = await getFinancialAdvice(
+          totalBudget,
+          totalIncome,
+          totalSpend
+        );
+        setFinancialAdvice(advice);
+      };
 
-    //   fetchFinancialAdvice();
+      fetchFinancialAdvice();
+    } 
     
   }, [totalBudget, totalIncome, totalSpend]);
 
@@ -63,7 +64,7 @@ function CardInfo({ budgetList, incomeList }) {
           <div className="p-7 border mt-4 -mb-1 rounded-2xl flex items-center justify-between">
             <div className="">
               <div className="flex mb-2 flex-row space-x-1 items-center ">
-                <h2 className="text-md ">Finan Smart AI</h2>
+                <h2 className="text-md "> PennySmart AI</h2>
                 <Sparkles
                   className="rounded-full text-white w-10 h-10 p-2
     bg-gradient-to-r
@@ -91,7 +92,7 @@ function CardInfo({ budgetList, incomeList }) {
             </div>
             <div className="p-7 border rounded-2xl flex items-center justify-between">
               <div>
-                <h2 className="text-sm">Total Spend</h2>
+                <h2 className="text-sm">Total Expenses</h2>
                 <h2 className="font-bold text-2xl">
                   ${formatNumber(totalSpend)}
                 </h2>
@@ -107,7 +108,7 @@ function CardInfo({ budgetList, incomeList }) {
             </div>
             <div className="p-7 border rounded-2xl flex items-center justify-between">
               <div>
-                <h2 className="text-sm">Sum of Income Streams</h2>
+                <h2 className="text-sm">Total Monthly Income</h2>
                 <h2 className="font-bold text-2xl">
                   ${formatNumber(totalIncome)}
                 </h2>
