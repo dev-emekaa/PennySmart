@@ -60,6 +60,15 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      animation: {
+        spin: 'spin 2s linear infinite',
+      },
+      keyframes: {
+        spin: {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

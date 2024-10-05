@@ -1,5 +1,3 @@
-
-
 import React, { useEffect } from "react";
 import Image from "next/image";
 import {
@@ -40,13 +38,6 @@ function SideNav() {
       icon: ReceiptText,
       path: "/dashboard/expenses",
     },
-
-    {
-      id: 4,
-      name: "Upgrade",
-      icon: ShieldCheck,
-      path: "/dashboard/upgrade",
-    },
   ];
   const path = usePathname();
 
@@ -67,8 +58,8 @@ function SideNav() {
                     text-gray-500 font-medium
                     mb-2
                     p-4 cursor-pointer rounded-full
-                    hover:text-primary hover:bg-blue-100
-                    ${path == menu.path && "text-primary bg-blue-100"}
+                    hover:text-primary hover:bg-green-100
+                    ${path == menu.path && "text-primary bg-green-100"}
                     `}
             >
               <menu.icon />
