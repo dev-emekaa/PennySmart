@@ -55,8 +55,10 @@ function EditBudget({ budgetInfo, refreshData }) {
     <div>
       <Dialog>
         <DialogTrigger asChild>
-          <Button className="flex space-x-2 gap-2 rounded-full">
-            {" "}
+          <Button
+            variant="outline"
+            className=" flex gap-1.5 sm:gap-2 max-sm:py-1 max-sm:px-2 text-xs rounded-2xl text-[white] bg-black hover:bg-white hover:text-black w-fit"
+          >
             <PenBox className="w-4" /> Edit
           </Button>
         </DialogTrigger>
@@ -94,7 +96,7 @@ function EditBudget({ budgetInfo, refreshData }) {
                   <Input
                     type="number"
                     defaultValue={budgetInfo?.amount}
-                    placeholder="e.g. 5000$"
+                    placeholder="e.g. ₦5000"
                     onChange={(e) => setAmount(e.target.value)}
                   />
                 </div>

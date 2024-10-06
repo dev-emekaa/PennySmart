@@ -1,4 +1,4 @@
-import formatNumber from "@/utils";
+import {formatNumber} from "@/utils";
 import getFinancialAdvice from "@/utils/getFinancialAdvice";
 import {
   PiggyBank,
@@ -57,6 +57,30 @@ function CardInfo({ budgetList, incomeList }) {
     setTotalSpend(totalSpend_);
   };
 
+
+
+  const cardData = [
+    {
+      title: "Total Budget",
+      value: formatNumber(totalBudget),
+      icon: <PiggyBank size={24} className="bg-green-2 p-3 h-12 w-12 rounded-full text-white" />,
+    },
+    {
+      title: "Total Expenses",
+      value: formatNumber(totalSpend),
+      icon: <ReceiptText size={24} className="bg-green-2 p-3 h-12 w-12 rounded-full text-white" />,
+    },
+    {
+      title: "No of Budget",
+      value: budgetList?.length,
+      icon: <Wallet size={24} className="bg-green-2 p-3 h-12 w-12 rounded-full text-white" />,
+    },
+    {
+      title: "Total Monthly Income",
+      value: formatNumber(totalIncome),
+      icon: <CircleDollarSign size={24} className="bg-green-2 p-3 h-12 w-12 rounded-full text-white" />,
+    },
+  ];
   return (
     <div>
       {budgetList?.length > 0 ? (
@@ -74,40 +98,17 @@ function CardInfo({ budgetList, incomeList }) {
           </div>
 
           <div className="mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div className="p-7 border rounded-2xl flex items-center justify-between">
-              <div>
-                <h2 className="text-sm">Total Budget</h2>
-                <h2 className="font-bold text-2xl">
-                  ${formatNumber(totalBudget)}
-                </h2>
+            {cardData.map((data) => (
+              <div key={data.title} className="p-7 border rounded-2xl flex items-center justify-between">
+                <div>
+                  <h2 className="text-sm">{data.title}</h2>
+                  <h2 className="font-bold text-2xl">
+                   {data.title !== "No of Budget" ? "₦" : ""} {data.value}
+                  </h2>
+                </div>
+                {data.icon}
               </div>
-              <PiggyBank className="bg-blue-800 p-3 h-12 w-12 rounded-full text-white" />
-            </div>
-            <div className="p-7 border rounded-2xl flex items-center justify-between">
-              <div>
-                <h2 className="text-sm">Total Expenses</h2>
-                <h2 className="font-bold text-2xl">
-                  ${formatNumber(totalSpend)}
-                </h2>
-              </div>
-              <ReceiptText className="bg-blue-800 p-3 h-12 w-12 rounded-full text-white" />
-            </div>
-            <div className="p-7 border rounded-2xl flex items-center justify-between">
-              <div>
-                <h2 className="text-sm">No. Of Budget</h2>
-                <h2 className="font-bold text-2xl">{budgetList?.length}</h2>
-              </div>
-              <Wallet className="bg-blue-800 p-3 h-12 w-12 rounded-full text-white" />
-            </div>
-            <div className="p-7 border rounded-2xl flex items-center justify-between">
-              <div>
-                <h2 className="text-sm">Total Monthly Income</h2>
-                <h2 className="font-bold text-2xl">
-                  ${formatNumber(totalIncome)}
-                </h2>
-              </div>
-              <CircleDollarSign className="bg-blue-800 p-3 h-12 w-12 rounded-full text-white" />
-            </div>
+            ))}
           </div>
         </div>
       ) : (

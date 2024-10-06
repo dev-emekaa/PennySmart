@@ -4,17 +4,27 @@
  * @returns {string} - The formatted number as a string.
  */
 
-const formatNumber = (num) => {
-    if (num >= 1e9) {
-      return (num / 1e9).toFixed(1).replace(/\.0$/, "") + "B";
-    }
-    if (num >= 1e6) {
-      return (num / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
-    }
-    if (num >= 1e3) {
-      return (num / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
-    }
-    return num.toString();
-  };
-  
-  export default formatNumber;
+export const formatNumber = (num) => {
+  if (num >= 1e9) {
+    return (num / 1e9).toFixed(1).replace(/\.0$/, "") + "B";
+  }
+  if (num >= 1e6) {
+    return (num / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
+  }
+  if (num >= 1e3) {
+    return (num / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
+  }
+  return num.toString();
+};
+
+// make a number have naira sign
+
+export const NairaFormat = (num) => {
+  const formatter = new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+  return formatter.format(num);
+};

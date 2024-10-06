@@ -1,3 +1,4 @@
+import { NairaFormat } from "@/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -10,7 +11,7 @@ function BudgetItem({ budget }) {
     <Link href={"/dashboard/expenses/" + budget?.id}>
       <div
         className="p-5 border rounded-2xl
-    hover:shadow-md cursor-pointer h-[170px]"
+    hover:shadow-md cursor-pointer min-h-[170px]"
       >
         <div className="flex gap-2 items-center justify-between">
           <div className="flex gap-2 items-center">
@@ -26,16 +27,16 @@ function BudgetItem({ budget }) {
               <h2 className="text-sm text-gray-500">{budget.totalItem} Item</h2>
             </div>
           </div>
-          <h2 className="font-bold text-primary text-lg"> ${budget.amount}</h2>
+          <h2 className="font-bold text-primary text-lg"> {NairaFormat(budget.amount)}</h2>
         </div>
 
         <div className="mt-5">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-xs text-slate-400">
-              ${budget.totalSpend ? budget.totalSpend : 0} Spend
+              {NairaFormat(budget.totalSpend ? budget.totalSpend : 0)} Spent
             </h2>
             <h2 className="text-xs text-slate-400">
-              ${budget.amount - budget.totalSpend} Remaining
+              {NairaFormat(budget.amount - budget.totalSpend)} Remaining
             </h2>
           </div>
           <div

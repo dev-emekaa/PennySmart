@@ -86,15 +86,19 @@ function Dashboard() {
 
       <CardInfo budgetList={budgetList} incomeList={incomeList} />
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-5">
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 ">
           <BarChartDashboard budgetList={budgetList} />
 
-          <ExpenseListTable
-            expensesList={expensesList}
-            refreshData={() => getBudgetList()}
-          />
+          <div className="flex flex-col gap-2 mt-7">
+            <h2 className="font-bold text-3xl">My Expenses</h2>
+            <ExpenseListTable
+              expensesList={expensesList}
+              refreshData={() => getBudgetList()}
+            />
+          </div>
         </div>
-        <div className="grid gap-5">
+
+        <div className="flex flex-col gap-5">
           <h2 className="font-bold text-lg">Latest Budgets</h2>
           {budgetList?.length > 0
             ? budgetList.map((budget, index) => (
