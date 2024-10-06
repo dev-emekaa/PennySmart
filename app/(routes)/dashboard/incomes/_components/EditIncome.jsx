@@ -16,12 +16,12 @@ import EmojiPicker from "emoji-picker-react";
 import { useUser } from "@clerk/nextjs";
 import { Input } from "@/components/ui/input";
 import { db } from "@/utils/dbConfig";
-import { Budgets } from "@/utils/schema";
+import { Incomes } from "@/utils/schema";
 import { eq } from "drizzle-orm";
 import { toast } from "sonner";
 
-function EditBudget({ budgetInfo, refreshData }) {
-  const [emojiIcon, setEmojiIcon] = useState(budgetInfo?.icon);
+const EditIncome = ({ incomeInfo, refreshData }) => {
+  const [emojiIcon, setEmojiIcon] = useState(incomeInfo?.icon);
   const [openEmojiPicker, setOpenEmojiPicker] = useState(false);
 
   const [name, setName] = useState();
@@ -30,26 +30,26 @@ function EditBudget({ budgetInfo, refreshData }) {
   const { user } = useUser();
 
   useEffect(() => {
-    if (budgetInfo) {
-      setEmojiIcon(budgetInfo?.icon);
-      setAmount(budgetInfo.amount);
-      setName(budgetInfo.name);
+    if (incomeInfo) {
+      setEmojiIcon(incomeInfo?.icon);
+      setAmount(incomeInfo.amount);
+      setName(incomeInfo.name);
     }
-  }, [budgetInfo]);
-  const onUpdateBudget = async () => {
+  }, [incomeInfo]);
+  const onUpdateIncome = async () => {
     const result = await db
-      .update(Budgets)
+      .update(Incomes)
       .set({
         name: name,
         amount: amount,
         icon: emojiIcon,
       })
-      .where(eq(Budgets.id, budgetInfo.id))
+      .where(eq(Incomes.id, incomeInfo.id))
       .returning();
 
     if (result) {
       refreshData();
-      toast("Budget Updated!");
+      toast("Income Updated!");
     }
   };
   return (
@@ -65,7 +65,7 @@ function EditBudget({ budgetInfo, refreshData }) {
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Update Budget</DialogTitle>
+            <DialogTitle>Update Income</DialogTitle>
             <DialogDescription>
               <div className="mt-5">
                 <Button
@@ -85,18 +85,18 @@ function EditBudget({ budgetInfo, refreshData }) {
                   />
                 </div>
                 <div className="mt-2">
-                  <h2 className="text-black font-medium my-1">Budget Name</h2>
+                  <h2 className="text-black font-medium my-1">Income Name</h2>
                   <Input
                     placeholder="e.g. Home Decor"
-                    defaultValue={budgetInfo?.name}
+                    defaultValue={incomeInfo?.name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className="mt-2">
-                  <h2 className="text-black font-medium my-1">Budget Amount</h2>
+                  <h2 className="text-black font-medium my-1">Income Amount</h2>
                   <Input
                     type="number"
-                    defaultValue={budgetInfo?.amount}
+                    defaultValue={incomeInfo?.amount}
                     placeholder="e.g. ₦5000"
                     onChange={(e) => setAmount(e.target.value)}
                   />
@@ -108,7 +108,7 @@ function EditBudget({ budgetInfo, refreshData }) {
             <DialogClose asChild>
               <Button
                 disabled={!(name && amount)}
-                onClick={() => onUpdateBudget()}
+                onClick={() => onUpdateIncome()}
                 className="mt-5 w-full rounded-full"
               >
                 Update Budget
@@ -119,6 +119,6 @@ function EditBudget({ budgetInfo, refreshData }) {
       </Dialog>
     </div>
   );
-}
+};
 
-export default EditBudget;
+export default EditIncome;

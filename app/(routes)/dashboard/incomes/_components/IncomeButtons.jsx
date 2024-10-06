@@ -17,6 +17,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Pen, PenBox, Trash } from "lucide-react";
 import { eq } from "drizzle-orm";
+import EditIncome from "./EditIncome";
 
 const IncomeButtons = ({ incomeInfo, refreshData }) => {
   const deleteIncome = async () => {
@@ -33,7 +34,7 @@ const IncomeButtons = ({ incomeInfo, refreshData }) => {
 
   return (
     <div className="flex gap-2 w-full h-full items-end max-sm:pl-6 justify-end">
-      {/* <EditBudget incomeInfo={incomeInfo} refreshData={() => getBudgetInfo()} /> */}
+      <EditIncome incomeInfo={incomeInfo} refreshData={() => refreshData()} />
 
       <AlertDialog>
         <AlertDialogTrigger asChild>
