@@ -1,33 +1,34 @@
 import { NairaFormat } from "@/utils";
 import Link from "next/link";
 import React from "react";
+import IncomeButtons from "./IncomeButtons";
 
-function IncomeItem({ budget }) {
+function IncomeItem({ income, refreshData }) {
   const calculateProgressPerc = () => {
-    const perc = (budget.totalSpend / budget.amount) * 100;
+    const perc = (income.totalSpend / income.amount) * 100;
     return perc > 100 ? 100 : perc.toFixed(2);
   };
   return (
     <div
-      className="p-5 border rounded-2xl
+      className="flex flex-col gap-2 p-4 border rounded-2xl
     hover:shadow-md cursor-pointer min-h-[140px]"
     >
       <div className="flex gap-2 items-center justify-between">
         <div className="flex gap-2 items-center">
           <h2
-            className="text-2xl p-3 px-4
+            className="text-2xl p-2 px-3
               bg-slate-100 rounded-full 
               "
           >
-            {budget?.icon}
+            {income?.icon}
           </h2>
           <div>
-            <h2 className="font-bold">{budget.name}</h2>
-            <h2 className="text-sm text-gray-500">{budget.totalItem} Item</h2>
+            <h2 className="font-bold">{income.name}</h2>
           </div>
         </div>
-        <h2 className="font-bold text-primary text-lg"> {NairaFormat(budget.amount)}</h2>
+        <h2 className="font-bold text-primary text-base"> {NairaFormat(income.amount)}</h2>
       </div>
+      <IncomeButtons incomeInfo={income} refreshData={refreshData} />
     </div>
   );
 }
