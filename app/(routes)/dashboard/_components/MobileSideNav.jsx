@@ -37,7 +37,7 @@ const MobileSideNav = () => {
           <div className="h-screen p-5 border shadow-sm">
             <div className="flex flex-row items-center">
               <Image
-                src={"./piggybank.svg"}
+                src={"./piggybank2.svg"}
                 alt="logo"
                 width={40}
                 height={25}

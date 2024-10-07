@@ -13,7 +13,7 @@ function SideNav() {
   return (
     <div className="h-screen p-5 border shadow-sm">
       <div className="flex flex-row items-center">
-        <Image src={"./piggybank.svg"} alt="logo" width={40} height={25} />
+        <Image src={"./piggybank2.svg"} alt="logo" width={40} height={25} />
         <span className="text-green-2 font-bold text-xl">PennySmart</span>
       </div>
       <div className="mt-5">

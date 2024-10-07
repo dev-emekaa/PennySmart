@@ -9,7 +9,7 @@ export const metadata = {
   title: "PennySmart",
   description: "Take control of your finances with PennySmart.",
   icons: {
-    icon: "/piggybank.svg",
+    icon: "/piggybank2.svg",
   },
 };
 
