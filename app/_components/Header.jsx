@@ -10,7 +10,7 @@ const Header= () =>{
   
   return (
     <div className="p-5 flex justify-between items-center border shadow-sm">
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center ">
         <Image src={"/piggybank.svg"} alt="logo" width={40} height={25} />
         <span className="text-green-2  font-bold text-xl">PennySmart</span>
       </div>

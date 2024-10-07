@@ -7,14 +7,16 @@ import { useUser } from "@clerk/nextjs";
 import React, { useEffect } from "react";
 
 const Home = () => {
-  // const router = useRouter();
-  // const { user, isSignedIn } = useUser();
+  
+  const router = useRouter();
+  const { user, isSignedIn } = useUser();
 
-  // useEffect(() => {
-  //   if (user && isSignedIn) {
-  //     return router.push("/dashboard");
-  //   }
-  // }, [user, isSignedIn]);
+  //redirect user to dashboard if signed in
+  useEffect(() => {
+    if (user && isSignedIn) {
+      return router.push("/dashboard");
+    }
+  }, [user, isSignedIn]);
 
   return (
     <div>

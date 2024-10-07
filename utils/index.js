@@ -28,3 +28,42 @@ export const NairaFormat = (num) => {
   });
   return formatter.format(num);
 };
+
+import {
+  LayoutGrid,
+  PiggyBank,
+  ReceiptText,
+  ShieldCheck,
+  CircleDollarSign,
+  TrendingUp,
+  TrendingDownIcon,
+} from "lucide-react";
+
+//dashboard menu link
+
+export const menuList = [
+  {
+    id: 1,
+    name: "Dashboard",
+    icon: LayoutGrid,
+    path: "/dashboard",
+  },
+  {
+    id: 2,
+    name: "Incomes",
+    icon: CircleDollarSign,
+    path: "/dashboard/incomes",
+  },
+  {
+    id: 2,
+    name: "Budgets",
+    icon: PiggyBank,
+    path: "/dashboard/budgets",
+  },
+  {
+    id: 3,
+    name: "Expenses",
+    icon: ReceiptText,
+    path: "/dashboard/expenses",
+  },
+];

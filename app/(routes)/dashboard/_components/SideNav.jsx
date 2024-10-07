@@ -1,44 +1,10 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import {
-  LayoutGrid,
-  PiggyBank,
-  ReceiptText,
-  ShieldCheck,
-  CircleDollarSign,
-  TrendingUp,
-  TrendingDownIcon,
-} from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { menuList } from "@/utils";
 function SideNav() {
-  const menuList = [
-    {
-      id: 1,
-      name: "Dashboard",
-      icon: LayoutGrid,
-      path: "/dashboard",
-    },
-    {
-      id: 2,
-      name: "Incomes",
-      icon: CircleDollarSign,
-      path: "/dashboard/incomes",
-    },
-    {
-      id: 2,
-      name: "Budgets",
-      icon: PiggyBank,
-      path: "/dashboard/budgets",
-    },
-    {
-      id: 3,
-      name: "Expenses",
-      icon: ReceiptText,
-      path: "/dashboard/expenses",
-    },
-  ];
   const path = usePathname();
 
   useEffect(() => {
