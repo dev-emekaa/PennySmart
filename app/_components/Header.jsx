@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="p-5 flex justify-between items-center border shadow-sm">
+    <nav className="fixed z-50 w-full bg-white p-5 flex justify-between items-center border shadow-sm">
       <div className="flex flex-row items-center ">
         <Image src={"/piggybank2.svg"} alt="logo" width={40} height={25} />
         <span className="text-green-2  font-bold text-xl">PennySmart</span>
@@ -35,14 +35,15 @@ const Header = () => {
               key={link.label}
               className="hover:text-green-2 duration-500 ease-in"
             >
-              <a
+              <Link
                 href={link.href}
-                className={cn("text-base text-gray-1 font-normal",{
-                  "text-green-2": isActive,
-                })}
+                className={`text-base text-gray-1 font-normal ${
+                  isActive && "text-green-2"
+                }`}
+                onClick={() => handleLinkClick(link.href)}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           );
         })}

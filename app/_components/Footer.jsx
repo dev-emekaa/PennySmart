@@ -8,14 +8,14 @@ const Footer = () => {
     <section className="flex size-full flex-row gap-1 justify-center">
       <h2 className="flex flex-row justify-center items-center text-sm max-xs:text-[7px] lg:text-sm ">
         <span className="pr-0.5">Built with </span>
-        <HeartHandshake className="size-6 max-xs:size-4 text-[#656d4a] pr-0.5" />
+        <HeartHandshake className="size-6 max-xs:size-4 text-[#edf2f4] pr-0.5" />
         <span className=" pr-0.5">By </span>
         <Link
           href="https://techysavant.site"
           target="_blank"
           className="flex flex-row items-center gap-0.5 duration-200 ease-in group"
         >
-          <span className="font-semibold text-[#edf2f4] group-hover:underline">
+          <span className="font-semibold  group-hover:underline">
             TechySavant
           </span>
           <Image

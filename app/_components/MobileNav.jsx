@@ -51,22 +51,26 @@ const MobileNav = () => {
               {landingNavLinks.map((link) => {
                 //check if window hash is equal to link href
                 const isActive = currentHash === link.href;
-                
+
                 return (
-                  <Link href={link.href} key={link.label}>
-                    <h2
-                      className={`flex gap-2 items-center
+                  <SheetClose asChild key={link.label}>
+                    <Link
+                      href={link.href}
+                      onClick={() => handleLinkClick(link.href)}
+                    >
+                      <h2
+                        className={`flex gap-2 items-center
                     text-gray-500 font-medium
                     mb-2
                     p-4 cursor-pointer rounded-full
                     hover:text-primary hover:bg-green-100
                    
                     ${isActive && "bg-green-100"}`}
-                      onClick={() => handleLinkClick(link.href)}
-                    >
-                      {link.label}
-                    </h2>
-                  </Link>
+                      >
+                        {link.label}
+                      </h2>
+                    </Link>
+                  </SheetClose>
                 );
               })}
             </div>

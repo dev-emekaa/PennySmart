@@ -68,10 +68,41 @@ export const menuList = [
   },
 ];
 
-
 export const landingNavLinks = [
   { href: "#home", label: "Home" },
   { href: "#features", label: "Features" },
   { href: "#pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
+];
+
+export const faqData = [
+  {
+    sn: 1,
+    question: "How does PennySmart work?",
+    answer:
+      "PennySmart uses artificial intelligence to analyze your spending habits and provide personalized insights and advice. It can help you track your expenses, create a budget, and make informed financial decisions. PennySmart is designed to be easy to use and understand, with a clean, intuitive interface that makes it easy to see your financial picture at a glance.",
+  },
+  {
+    sn: 2,
+    question: "Is PennySmart really free?",
+    answer: "Yes, PennySmart at the moment is 100% free. ",
+  },
+  {
+    sn: 3,
+    question: "Is PennySmart Safe?",
+    answer:
+      "Yes. PennySmart is a secure platform and your financial data is prevented from unauthorized access and well protected. You have absolutely nothing to worry about. ",
+  },
+  {
+    sn: 4,
+    question: "Is PennySmart easy to use? ",
+    answer:
+      "Yes. PennySmart is designed to be easy to use and understand, with a clean, intuitive interface that makes it easy to see your financial picture at a glance.",
+  },
+  {
+    sn: 5,
+    question: "Is PennySmart OpenSource? ",
+    answer:
+      "Yes. PennySmart is open source. This means that you can check out the code and potentially contribute to the project.  ",
+  },
 ];

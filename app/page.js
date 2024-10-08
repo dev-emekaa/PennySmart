@@ -7,6 +7,8 @@ import { useUser } from "@clerk/nextjs";
 import React, { useEffect } from "react";
 import { toast } from "sonner";
 import Footer from "./_components/Footer";
+import Pricing from "./_components/Pricing";
+import Faq from "./_components/Faq";
 
 const Home = () => {
   const router = useRouter();
@@ -27,20 +29,19 @@ const Home = () => {
       <section className=" sm:px-16 px-8 py-12 bg-white" id="home">
         {/* <LandingHome /> */}
       </section>
-    
 
       <section className="sm:px-16 px-8 py-12 bg-white" id="features">
         {/* <Features /> */}
       </section>
 
-      <section className="sm:px-16 px-8 py-16 bg-dark-3">
-        {/* <Pricing /> */}
+      <section className="sm:px-16 px-8 py-16 bg-green-2" >
+        <Pricing />
       </section>
 
       <section className="sm:px-16 px-8 py-12 bg-gray-2" id="faq">
-        {/* <Faq /> */}
+        <Faq />
       </section>
-      <section className="sm:px-16 px-8 py-5 bg-gray-700" id="footer">
+      <section className="sm:px-16 px-8 py-5 bg-green-2" id="footer">
         <Footer />
       </section>
     </main>
