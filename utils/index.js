@@ -67,3 +67,11 @@ export const menuList = [
     path: "/dashboard/expenses",
   },
 ];
+
+
+export const landingNavLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#features", label: "Features" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#faq", label: "FAQ" },
+];

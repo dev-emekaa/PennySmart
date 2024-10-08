@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         signInUrl="/sign-in"
         signUpUrl="/sign-up"
       >
-        <body className={outfit.className}>
+        <body className={`${outfit.className} scroll-smooth`}>
           <Toaster />
           {children}
         </body>
