@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import Footer from "./_components/Footer";
 import Pricing from "./_components/Pricing";
 import Faq from "./_components/Faq";
+import Features from "./_components/Features";
 
 const Home = () => {
   const router = useRouter();
@@ -27,11 +28,11 @@ const Home = () => {
       <Header />
 
       <section className=" sm:px-16 px-8 py-12 bg-white" id="home">
-        {/* <LandingHome /> */}
+        <Hero />
       </section>
 
       <section className="sm:px-16 px-8 py-12 bg-white" id="features">
-        {/* <Features /> */}
+        <Features />
       </section>
 
       <section className="sm:px-16 px-8 py-16 bg-green-2" >

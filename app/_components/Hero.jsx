@@ -1,36 +1,50 @@
-"use client";
-import React from "react";
 import Image from "next/image";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-function Hero() {
+const Hero = () => {
   return (
-    <section className="bg-gray-50 flex items-center flex-col">
-      <div className="flex flex-col overflow-hidden">
-        <ContainerScroll
-          titleComponent={
-            <>
-              <h1 className="text-4xl font-semibold text-black dark:text-white ">
-                Manage your Money with AI-Driven Personal <br />
-                <span className="text-4xl md:text-[6rem] text-green-2 font-bold mt-1 leading-none">
-                  Finance Advisor  
-                </span>
-              </h1>
-            </>
-          }
-        >
+    <section className="w-full pt-12 lg:pt-32 xl:pt-48 ">
+      <div className="container px-4 md:px-6 place-content-center w-full ">
+        <div className="grid gap-6 md:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px] ">
           <Image
-            src={`/dashboard.png`}
-            alt="hero"
-            height={720}
-            width={1400}
-            className="mx-auto rounded-2xl object-cover h-full object-left-top"
-            draggable={false}
+            src="/pennyHomePic.jpg"
+            width={550}
+            height={550}
+            alt="Piggy bank with coins in a desert landscape"
+            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
           />
-        </ContainerScroll>
+          <div className="flex flex-col justify-center space-y-4">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                Get your finances under control with{" "}
+                <span className="text-green-2">PennySmart</span>
+              </h1>
+              <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                Track your expenses, create a budget, and get personalized tips
+                to improve your financial health.
+              </p>
+            </div>
+            <div className="flex gap-2 min-[400px]:flex-row">
+              <Link href={"/sign-in"} className=" ">
+                <Button
+                  variant="outline"
+                  className="rounded-full px-10 sm:px-16"
+                >
+                  Sign In
+                </Button>
+              </Link>
+              <Link href={"/sign-up"} className=" ">
+                <Button className="rounded-full hover:bg-green-2 ease-in duration-300 px-6 sm:px-10">
+                  Get Started
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
-}
+};
 
 export default Hero;

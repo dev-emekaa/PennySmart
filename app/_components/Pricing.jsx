@@ -13,7 +13,7 @@ const Pricing = () => {
         </h2>
         <div className="flex flex-row max-xs:text-[10px]">
           <span className=" text-gray-800 ">THERE'S NONE. PennySmart IS 100% FREE</span>
-          <HandHeart className="size-6 max-xs:size-4 text-white" />
+          <HandHeart className="size-6 max-xs:size-4 text-white ml-0.5" />
         </div>
       </div>
     </section>

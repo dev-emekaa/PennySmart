@@ -51,7 +51,7 @@ const Header = () => {
 
       <div className="flex gap-3  items-center">
         <Link href={"/sign-in"} className=" max-sm:hidden">
-          <Button variant="outline" className="rounded-full">
+          <Button className="w-full  rounded-full px-8 bg-white text-black border outline-none hover:bg-gray-200 ease-in duration-300">
             Sign In
           </Button>
         </Link>
