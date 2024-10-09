@@ -6,9 +6,9 @@ const Hero = () => {
   return (
     <section className="w-full pt-12 lg:pt-32 xl:pt-48 ">
       <div className="container px-4 md:px-6 place-content-center w-full ">
-        <div className="grid gap-6 md:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px] ">
+        <div className="grid gap-6 md:grid-cols-[1fr_400px] lg:gap-12 lg:grid-cols-[1fr_500px] ">
           <Image
-            src="/pennyHomePic.jpg"
+            src="/pennyHomePic.avif"
             width={550}
             height={550}
             alt="Piggy bank with coins in a desert landscape"

@@ -89,13 +89,13 @@ function ExpensesScreen({ params }) {
     <div className="p-10">
       <div className="text-2xl font-bold gap-2 flex justify-between items-center">
         <div className="flex max-sm:flex-col w-full justify-between">
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row w-full gap-2">
             <ArrowLeft
               onClick={() => route.back()}
               className="cursor-pointer"
             />
             <h1 className="flex  gap-2 max-sm:text-sm max-sm:text-center">
-              {budgetInfo?.name} Budget Expenses
+              {budgetInfo?.name} Budget
             </h1>
           </div>
           <div className="flex gap-2 w-full items-center justify-start max-sm:pl-6 sm:justify-end  ">

@@ -111,7 +111,7 @@ const EditIncome = ({ incomeInfo, refreshData }) => {
                 onClick={() => onUpdateIncome()}
                 className="mt-5 w-full rounded-full"
               >
-                Update Budget
+                Update Income
               </Button>
             </DialogClose>
           </DialogFooter>

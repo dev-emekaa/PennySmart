@@ -18,7 +18,7 @@ const Home = () => {
   //redirect user to dashboard if signed in
   useEffect(() => {
     if (user && isSignedIn) {
-      toast.success(`Welcome ${user.firstName}`, 500);
+      toast.success(`Redirecting ${user.firstName} to dashboard`, 500);
       return router.push("/dashboard");
     }
   }, [user, isSignedIn]);

@@ -1,4 +1,4 @@
-import {formatNumber} from "@/utils";
+import { formatNumber } from "@/utils";
 import getFinancialAdvice from "@/utils/getFinancialAdvice";
 import {
   PiggyBank,
@@ -21,21 +21,20 @@ function CardInfo({ budgetList, incomeList }) {
     }
   }, [budgetList, incomeList]);
 
-  // useEffect(() => {
-  //   if (totalBudget > 0 || totalIncome > 0 || totalSpend > 0) {
-  //     const fetchFinancialAdvice = async () => {
-  //       const advice = await getFinancialAdvice(
-  //         totalBudget,
-  //         totalIncome,
-  //         totalSpend
-  //       );
-  //       setFinancialAdvice(advice);
-  //     };
+  useEffect(() => {
+    if (totalBudget > 0 || totalIncome > 0 || totalSpend > 0) {
+      const fetchFinancialAdvice = async () => {
+        const advice = await getFinancialAdvice(
+          totalBudget,
+          totalIncome,
+          totalSpend
+        );
+        setFinancialAdvice(advice);
+      };
 
-  //     fetchFinancialAdvice();
-  //   }
-
-  // }, [totalBudget, totalIncome, totalSpend]);
+      fetchFinancialAdvice();
+    }
+  }, [totalBudget, totalIncome, totalSpend]);
 
   const CalculateCardInfo = () => {
     console.log(budgetList);
@@ -57,28 +56,47 @@ function CardInfo({ budgetList, incomeList }) {
     setTotalSpend(totalSpend_);
   };
 
-
-
   const cardData = [
     {
-      title: "Total Budget",
+      title: "No of Budget",
+      value: budgetList?.length,
+      icon: (
+        <Wallet
+          size={24}
+          className="bg-green-2 p-3 h-12 w-12 rounded-full text-white"
+        />
+      ),
+    },
+    {
+      title: "Total Budget Amount",
       value: formatNumber(totalBudget),
-      icon: <PiggyBank size={24} className="bg-green-2 p-3 h-12 w-12 rounded-full text-white" />,
+      icon: (
+        <PiggyBank
+          size={24}
+          className="bg-green-2 p-3 h-12 w-12 rounded-full text-white"
+        />
+      ),
     },
     {
       title: "Total Expenses",
       value: formatNumber(totalSpend),
-      icon: <ReceiptText size={24} className="bg-green-2 p-3 h-12 w-12 rounded-full text-white" />,
+      icon: (
+        <ReceiptText
+          size={24}
+          className="bg-green-2 p-3 h-12 w-12 rounded-full text-white"
+        />
+      ),
     },
-    {
-      title: "No of Budget",
-      value: budgetList?.length,
-      icon: <Wallet size={24} className="bg-green-2 p-3 h-12 w-12 rounded-full text-white" />,
-    },
+   
     {
       title: "Total Monthly Income",
       value: formatNumber(totalIncome),
-      icon: <CircleDollarSign size={24} className="bg-green-2 p-3 h-12 w-12 rounded-full text-white" />,
+      icon: (
+        <CircleDollarSign
+          size={24}
+          className="bg-green-2 p-3 h-12 w-12 rounded-full text-white"
+        />
+      ),
     },
   ];
   return (
@@ -86,10 +104,10 @@ function CardInfo({ budgetList, incomeList }) {
       {budgetList?.length > 0 ? (
         <div>
           <div className="p-7 border mt-4 -mb-1 rounded-2xl flex items-center justify-between">
-            <div className={!financialAdvice && "hidden"}>
+            <div className="">
               <div className="flex mb-2 flex-row space-x-1 items-center ">
                 <h2 className="text-md "> PennySmart AI</h2>
-                <Sparkles className="rounded-full text-white w-10 h-10 p-2 bg-gradient-to-r  from-pink-500   via-red-500   to-yellow-500   background-animate" />
+                <Sparkles className="rounded-full text-white w-10 h-10 p-2 bg-gradient-to-r  from-green-1   via-gray-800   to-green-2   background-animate" />
               </div>
               <h2 className="font-light text-md">
                 {financialAdvice || "Loading financial advice..."}
@@ -99,11 +117,14 @@ function CardInfo({ budgetList, incomeList }) {
 
           <div className="mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {cardData.map((data) => (
-              <div key={data.title} className="p-7 border rounded-2xl flex items-center justify-between">
+              <div
+                key={data.title}
+                className="p-7 border rounded-2xl flex items-center justify-between"
+              >
                 <div>
                   <h2 className="text-sm">{data.title}</h2>
                   <h2 className="font-bold text-2xl">
-                   {data.title !== "No of Budget" ? "₦" : ""} {data.value}
+                    {data.title !== "No of Budget" ? "₦" : ""} {data.value}
                   </h2>
                 </div>
                 {data.icon}

@@ -46,7 +46,7 @@ function BarChartDashboard({ budgetList }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Budget Chart - Total Amount:Total Expenses</CardTitle>
+        <CardTitle>Budget Chart - Budget Amount:Expenses</CardTitle>
         <CardDescription>Budget Amount & Expenses Breakdown</CardDescription>
       </CardHeader>
       <CardContent>
@@ -62,7 +62,7 @@ function BarChartDashboard({ budgetList }) {
                 value.length > 20 ? value.slice(0, 20) + "..." : value
               }
             />
-            <ChartTooltip content={<ChartTooltipContent  />} />
+            <ChartTooltip content={<ChartTooltipContent />} />
             <ChartLegend content={<ChartLegendContent />} />
             <Bar
               dataKey="totalExpenses"
