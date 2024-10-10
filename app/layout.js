@@ -7,7 +7,7 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
   title: "PennySmart",
-  description: "Take control of your finances with PennySmart.",
+  description: "Take control of your finances with PennySmart. AI Personal Finance Assistant with Expense Tracking, Budget Planning, and Personalised Financial Insights.",
   icons: {
     icon: "/piggybank2.svg",
   },
