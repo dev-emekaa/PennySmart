@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="https://youtu.be/dGHFV_RMGag" target="_blank">
-      <img src="https://i.postimg.cc/tJsYLQcP/test1.jpg" alt="Project Banner">
+      <img width="500" alt="PennySmart Banner" src="https://github.com/user-attachments/assets/89fba7ea-1b61-4151-aa17-3dc08275390f">
     </a>
   
   <br />
