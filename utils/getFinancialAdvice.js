@@ -9,10 +9,10 @@ const getFinancialAdvice = async (totalBudget, totalIncome, totalSpend) => {
   try {
     const userPrompt = `
       Based on the following financial data:
-      - Total Budget: ${totalBudget} USD
-      - Expenses: ${totalSpend} USD
-      - Incomes: ${totalIncome} USD
-      Provide detailed financial advice in 2 sentence to help the user manage their finances more effectively.
+      - Total Budget Amount: ${totalBudget} Naira
+      - Expenses: ${totalSpend} Naira
+      - Incomes: ${totalIncome} Naira
+      Provide detailed financial advice in 2 sentence to help the user manage their finances more effectively in Nigeria.
         `;
 
     const result = await model.generateContent(userPrompt);
