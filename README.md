@@ -46,7 +46,7 @@ PennySmart is the AI personal financial assistant you most certainly need. It he
 
 - **Budget Management**: Enables users to manage their budgets effectively.
 
-- **Personalized Financial Advice**: Provides detailed financial advice based on user-specific financial data using OpenAI's GPT-4 model.
+- **Personalized Financial Advice**: Provides detailed financial advice based on user-specific financial data using Googles GEMINI-AI API.
 
 - **Data Visualisation and Metrics**: Provides various financial metrics like total income, expenses, budget amount and also provides an Interactive Chart for better visualisation of users Financial Data.
 
@@ -65,8 +65,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/mendsalbert/ai-finance-trackingt.git
-cd ai-finance-tracking
+git clone https://github.com/techy-savant/PennySmart
+cd PennySmart
 ```
 
 **Installation**
