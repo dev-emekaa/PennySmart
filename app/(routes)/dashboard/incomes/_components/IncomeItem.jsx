@@ -26,7 +26,10 @@ function IncomeItem({ income, refreshData }) {
             <h2 className="font-bold">{income.name}</h2>
           </div>
         </div>
-        <h2 className="font-bold text-primary text-base"> {NairaFormat(income.amount)}</h2>
+        <h2 className="font-bold text-primary text-base">
+          {" "}
+          ${(income.amount)}
+        </h2>
       </div>
       <IncomeButtons incomeInfo={income} refreshData={refreshData} />
     </div>

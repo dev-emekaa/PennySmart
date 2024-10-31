@@ -97,7 +97,7 @@ const EditIncome = ({ incomeInfo, refreshData }) => {
                   <Input
                     type="number"
                     defaultValue={incomeInfo?.amount}
-                    placeholder="e.g. ₦5000"
+                    placeholder="e.g. $5000"
                     onChange={(e) => setAmount(e.target.value)}
                   />
                 </div>

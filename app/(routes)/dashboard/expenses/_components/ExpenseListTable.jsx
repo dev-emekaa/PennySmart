@@ -64,7 +64,7 @@ function ExpenseListTable({ expensesList, refreshData }) {
             {expensesList.map((expense) => (
               <TableRow key={expense.name}>
                 <TableCell className="font-medium">{expense.name}</TableCell>
-                <TableCell>{NairaFormat(expense.amount)}</TableCell>
+                <TableCell>${(expense.amount)}</TableCell>
                 <TableCell>{expense.createdAt}</TableCell>
                 <TableCell className="text-red-500 text-right cursor-pointer">
                   <Dialog>
@@ -105,7 +105,7 @@ function ExpenseListTable({ expensesList, refreshData }) {
           <TableFooter>
             <TableRow>
               <TableCell colSpan={3}>Total</TableCell>
-              <TableCell className="text-right">₦{totalAmount}</TableCell>
+              <TableCell className="text-right">${totalAmount}</TableCell>
             </TableRow>
           </TableFooter>
         </Table>

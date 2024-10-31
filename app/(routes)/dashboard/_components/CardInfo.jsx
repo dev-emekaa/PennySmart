@@ -87,7 +87,7 @@ function CardInfo({ budgetList, incomeList }) {
         />
       ),
     },
-   
+
     {
       title: "Total Monthly Income",
       value: formatNumber(totalIncome),
@@ -124,7 +124,7 @@ function CardInfo({ budgetList, incomeList }) {
                 <div>
                   <h2 className="text-sm">{data.title}</h2>
                   <h2 className="font-bold text-2xl">
-                    {data.title !== "No of Budget" ? "₦" : ""} {data.value}
+                    {data.title !== "No of Budget" ? "$" : ""} {data.value}
                   </h2>
                 </div>
                 {data.icon}
