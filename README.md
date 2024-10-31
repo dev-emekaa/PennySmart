@@ -35,7 +35,7 @@ PennySmart is the AI personal financial assistant you most certainly need. It he
 ## <a name="tech-stack">Tech Stack</a>
 
 - Next.js
-- TypeScript
+- JavaScript
 - Google GEMINI-AI API
 - Tailwind CSS
 - Shadcn-ui
